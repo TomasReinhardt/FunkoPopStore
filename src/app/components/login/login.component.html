@@ -1,0 +1,8 @@
+<form id="formLogin" #formLogin="ngForm" (ngSubmit)="checkUser(formLogin)" *ngIf="userA.exist == 'false'">
+    <input type="text" name="name" #name="ngModel" [(ngModel)]="username" placeholder="Usuario"/>
+    <input type="password" name="pass" #pass="ngModel" [(ngModel)]="password" placeholder="Contraseña"/>
+    <input type="submit" value="Iniciar sesión"/>
+</form>
+<form id="formlogOut" #formlogOut="ngForm" (ngSubmit)="logOut()" *ngIf="userA.exist == 'true'">
+    <input type="submit" value="Cerrar sesión"/>
+</form>

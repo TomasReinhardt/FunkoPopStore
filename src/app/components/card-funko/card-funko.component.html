@@ -1,0 +1,11 @@
+<div class="cardFunko">
+    <a [routerLink]="['/funkopop',funko._id]">
+        <span class="special" *ngIf="funko.special">Exclusivo!!</span>
+        <span class="special agotado" *ngIf="funko.stock <= 0" >Agotado</span>
+        <div class="image"> <img src="{{url+'get-image/'+funko.image}}"  alt="FunkoPop de {{funko.name}}"/> </div>
+        <div class="info-funko">
+            <h3>{{funko.name}}</h3>
+            <h5>{{funko.edition}}</h5>
+        </div>
+    </a>
+</div>

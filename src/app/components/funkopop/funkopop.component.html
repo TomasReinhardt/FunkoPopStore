@@ -1,0 +1,23 @@
+<div class="funkopop">
+    <div class="cardFunko">
+        <div class="image">
+            <span class="special" *ngIf="funko.special">Exclusivo!!</span>
+            <img src="{{url+'get-image/'+funko.image}}"  alt="FunkoPop de {{funko.name}}"/> 
+        </div>
+        <div class="info-funko">
+           <span>
+                <h3>{{funko.name}} - {{funko.edition}}</h3>
+                <p>
+                    Colección: {{funko.saga}} <br>
+                    Numero: #{{funko.ref}} <br>
+                    Stock: {{funko.stock}}
+                </p>
+                <h4> Precio: ${{funko.price}} </h4>
+            </span>
+
+            <a [routerLink]="['/funkopop',funko._id,'buy']"  *ngIf="funko.stock > 0">Comprar</a>
+            <a class="agotado" *ngIf="funko.stock <= 0">Agotado</a>
+            <a [routerLink]="['/funkopop',funko._id,'edit']" *ngIf="userA.admin == 'true'">Editar</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<h2>{{title}}</h2>
+<form id="formFunko" #formFunko="ngForm" (ngSubmit)="saveFunko(formFunko)">
+
+    <div class="image">
+        <div>
+            <label for="image">FunkoPop</label>
+        </div>
+        <div *ngIf="funko.image">
+            <img src="{{url+'get-image/'+funko.image}}"  alt="FunkoPop de {{funko.name}}"/> 
+        </div>
+        <div>
+            <input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+        </div>
+    </div>
+
+    <div class="info">
+        <div>
+            <label for="name">Nombre del FunkoPop:</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="funko.name" required/><br>
+            <span *ngIf="name.touched && !name.valid">Campo Obligatorio</span>
+        </div>
+
+        <div>
+            <label for="collection">Colleción:</label>
+            <input type="text" name="collection" #collection="ngModel" [(ngModel)]="funko.saga" required/><br>
+            <span *ngIf="collection.touched && !collection.valid">Campo Obligatorio</span>
+        </div>
+
+        <div>
+            <label for="ref">Numero:</label>
+            <input type="number" name="ref" #ref="ngModel" [(ngModel)]="funko.ref"/><br>
+        </div>
+
+        <div>
+            <label for="price">Precio:</label>
+            <input type="number" name="price" #price="ngModel" [(ngModel)]="funko.price"/><br>
+        </div>
+
+        <div>
+            <label for="stock">Stock:</label>
+            <input type="number" name="stock" #stock="ngModel" [(ngModel)]="funko.stock"/><br>
+        </div>
+
+        <div>
+            <label for="edition">Edición:</label>
+            <input type="text" name="edition" #edition="ngModel" [(ngModel)]="funko.edition" required/><br>
+            <span *ngIf="edition.touched && !edition.valid">Campo Obligatorio</span>
+        </div>
+
+        <div>
+            <label for="special">Edición exclusiva?</label>
+            <input type="checkbox" name="specail" #special="ngModel" [(ngModel)]="funko.special" />
+        </div>
+
+        <div id="button">
+            <input type="submit" value="Cargar" [disabled]="!formFunko.form.valid"/>
+        </div>
+    </div>
+    
+</form>

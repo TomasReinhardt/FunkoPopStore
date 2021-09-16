@@ -1,0 +1,20 @@
+<div class="conteiner">
+    <router-outlet></router-outlet>
+    <aside>
+        <ul id="nav">
+            <li><a [routerLink]="['/']">Todos</a></li>
+            <li><a id="addF" [routerLink]="['/addfunko']" *ngIf="userA.admin == 'true'">Añadir FunkoPop</a></li>
+            <li id="collections"> <a id="button-menu" (click)="click()">Colecciones</a>
+                
+                <ul class="list-collections">
+                    <li><a [routerLink]="['/collections/Star Wars',userA]">Star Wars</a></li>
+                    <li><a [routerLink]="['/collections/Marvel']">Marvel</a></li>
+                    <li><a [routerLink]="['/collections/Peliculas']">Peliculas</a></li>
+                </ul>
+
+            </li>
+
+        </ul>
+        <login></login>
+    </aside>
+</div>
