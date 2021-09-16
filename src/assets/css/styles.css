@@ -311,6 +311,7 @@ all-funko h2, funko-add h2, saga-funko h2, funkopop h2, edit-funko h2, comprafor
   cursor: pointer;
   text-align: center;
   line-height: 50px;
+  margin-bottom: 20px;
 }
 
 .funkopop .cardFunko .info-funko a:hover {
