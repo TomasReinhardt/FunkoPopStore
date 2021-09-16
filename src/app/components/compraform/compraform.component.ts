@@ -32,7 +32,6 @@ export class CompraformComponent implements OnInit {
 
   ngDoCheck() {
     this.pricefinal = this.funko.price*this.cantidad+this.costoenvio;
-    console.log("hola")
   }
   buy(form:any){
     alert('Felicidades por su compra invisible, pronto le llegara una factura invisible a su correo :D')
