@@ -1,0 +1,424 @@
+@font-face {
+    font-family: 'Hachi';
+    src: url('./fonts/Hachi/Hachi.ttf');
+}
+$colorfondo: #0c1a27;
+$color1: #2970ca;
+$color2: #006494;
+$color3: #13293d;
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: $colorfondo;
+    font-family: 'Hachi';
+}
+
+.img {
+    overflow: hidden;
+    max-height: 250px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+input[type=number] { 
+    -moz-appearance:textfield; 
+}
+
+.conteiner {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+aside {
+    width: 20%;
+    padding-top: 73px;
+    form {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 20px 0px;
+        padding: 10px 0px;
+        border-radius: 20px;
+        border: 1px solid $color1;
+        box-shadow: 0px 0px 4px 1px $color1;
+        input {
+            width: 60%;
+            margin: 10px 0px;
+        }
+        input[type=submit]:hover {
+            background-color: $color1;
+            color: $color3;
+        }
+    }
+    #nav {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        overflow: hidden;
+        li {
+            width: 100%;
+            a {
+                display: block;
+                text-decoration: none;
+                max-width: 250px;
+                min-width: 100px;
+                padding: 20px 10px;
+                margin: 0px auto;
+                text-align: center;
+                color: $color1;
+                background-color: $color3;
+                transition: all 300ms;
+                cursor: pointer;
+            }
+            a:hover {
+                background-color: $color1;
+                color: $color3;
+            }
+            .list-collections {
+                position: relative;
+                display: none;
+                li {
+                    width: 60%;
+                    margin: 0 auto;
+                    a {
+                        margin: 10px 0px;
+                        border-radius: 20px;
+                    }
+                }
+
+            }
+        }
+        li:first-child{
+            a {
+                border-radius: 20px 20px 0px 0px;
+            }
+            
+        }
+        li:last-child{
+            a{
+                border-radius: 0px 0px 20px 20px;
+            }
+        }
+    }
+}
+
+all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
+    width: 75%;
+    margin: 0 auto;
+
+    h2 {
+        text-align: center;
+        color: $color1;
+        margin-bottom: 30px;
+    }
+}
+
+.allFunko {
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.cardFunko {
+    a{
+        text-decoration: none;
+    }
+    margin: 15px;
+    border: 1px solid $color2;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 10px;
+    box-shadow: 0px 0px 4px 1px $color1;
+    .image {
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        img {
+            width: 200px;
+            max-width: 250px;
+        }
+    }
+    .info-funko {
+        width: 200px;
+        height: 110px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        h3,h5 {
+            width: 100%;
+        }
+        h3,p,h4 {
+            color: $color1;
+        }
+        h5 {
+            color: $color2;
+        }
+    }
+    .special {
+        background-color: lightblue;
+        position: absolute;
+        padding: 8px;
+        border-radius: 20px;
+        color: $colorfondo;
+        margin-top: -20px;
+        margin-left: -21px;
+    }
+    .agotado {
+        margin-left: 128px;
+        margin-top: 287px;
+        background-color: salmon;
+        color: black;
+    }
+}
+
+.funkopop {
+    .cardFunko {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 100%;
+        margin-top: 75px;
+        .special {
+            max-width: 100px;
+            margin: 10px;
+            margin-top: -20px;
+            margin-left: -21px;
+        }
+        .image {
+            display: flex;
+            border-radius: 0px;
+            max-width: 300px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+            img {
+                border-radius: 20px;
+                width: 100%;
+            }
+        }
+        .info-funko {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            margin-left: 50px;
+            span {
+                width: 100%;
+                h3,h5,h4 {
+                    width: 100%;
+                }
+                h3 {
+                    margin: 30px 0px;
+                    font-size: 30px;
+                }
+                h4 {
+                    margin: 30px 0px;
+                    font-size: 25px;
+                }
+            }
+            a {
+                min-width: 150px;
+                height: 50px;
+                margin: 0 auto;
+                background-color: $color3;
+                color: $color1;
+                border: none;
+                border-radius: 20px;
+                font-family: 'Hachi';
+                transition: all 300ms;
+                cursor: pointer;
+                text-align: center;
+                line-height: 50px;
+            }
+            a:hover {
+                background-color: $color1;
+                color: $color3;
+            }
+            .agotado {
+                background-color: salmon;
+                color: black;
+                cursor: default;
+            }
+            .agotado:hover {
+                background-color: salmon;
+                color: black;
+            }
+        }
+    }
+}
+
+
+
+#formFunko {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .image {
+        width: 50%;
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            label {
+                margin: 0 auto;
+                height: 30px;
+            }
+            img {
+                border-radius: 35px;
+                width: 250px;
+            }
+        }
+    }
+    .info {
+        width: 50%;
+        div{
+            width: 100%;
+            margin: 15px;
+        }
+        #button{
+            width: 20%;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        #button:hover {
+            input[type=submit] {
+                background-color: $color1;
+                color: $color3;
+            }
+            input[disabled]:hover{
+                box-shadow: 0px 0px 4px 1px #333;
+                color: #333;
+                background-color: transparent;
+            }
+        }
+        span {
+            color: red;
+        }
+    }
+}
+#formlogOut {
+    box-shadow: none;
+    border: none;
+}
+
+#formBuy {
+    div {
+        width: 100%;
+        margin: 30px 0px;
+        display: flex;
+        align-items: center;
+        .prices {
+            text-align: center;
+            width: 80%;
+            max-width: 450px;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 4px 1px $color1;
+            border: 1px solid $color2;
+            color: $color1;
+            font-size: 15px;
+        }
+        span {
+            color: red;
+            margin-left: 20px;
+        }
+        label {
+            min-height: 30px;
+        }
+    }
+    #button{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 40px;
+        input {
+            width: 100%;
+            display: block;
+        }
+    }
+    #button:hover {
+        input[type=submit] {
+            background-color: $color1;
+            color: $color3;
+        }
+        input[disabled]:hover{
+            box-shadow: 0px 0px 4px 1px #333;
+            color: #333;
+            background-color: transparent;
+        }
+    }
+    .title {
+        display: flex;
+        flex-wrap: wrap;
+        h3{
+            padding: 10px;
+            line-height: 30px;
+            min-height: 30px;
+            border-radius: 10px;
+            color: $color3;
+            background-color: $color1;
+        }
+        h2 {
+            text-align: left;
+            width: 90%;
+            margin: 0px;
+            line-height: 46px;
+        }
+    }
+}
+//Formularios
+input {
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 30px;
+    color: $color2;
+    background-color: $colorfondo;
+    border: 2px solid $color2;
+    box-shadow: 0px 0px 4px 1px $color1;
+}
+label, input[type=submit] {
+    padding: 5px;
+    margin-right: 10px;
+    background-color: $color1;
+    color: $color3;
+    border-radius: 10px;
+}
+input[type=submit] {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    font-family: 'Hachi';
+    color: $color1;
+    transition: all 300ms;
+}
+input[disabled]{
+    cursor: not-allowed;
+    box-shadow: 0px 0px 4px 1px #333;
+    color: #333;
+}
+input[type=checkbox] {
+    box-shadow: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+

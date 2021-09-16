@@ -1,0 +1,530 @@
+@font-face {
+  font-family: 'Hachi';
+  src: url("./fonts/Hachi/Hachi.ttf");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #0c1a27;
+  font-family: 'Hachi';
+}
+
+.img {
+  overflow: hidden;
+  max-height: 250px;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.conteiner {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+aside {
+  width: 20%;
+  padding-top: 73px;
+}
+
+aside form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 20px 0px;
+  padding: 10px 0px;
+  border-radius: 20px;
+  border: 1px solid #2970ca;
+  -webkit-box-shadow: 0px 0px 4px 1px #2970ca;
+          box-shadow: 0px 0px 4px 1px #2970ca;
+}
+
+aside form input {
+  width: 60%;
+  margin: 10px 0px;
+}
+
+aside form input[type=submit]:hover {
+  background-color: #2970ca;
+  color: #13293d;
+}
+
+aside #nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+aside #nav li {
+  width: 100%;
+}
+
+aside #nav li a {
+  display: block;
+  text-decoration: none;
+  max-width: 250px;
+  min-width: 100px;
+  padding: 20px 10px;
+  margin: 0px auto;
+  text-align: center;
+  color: #2970ca;
+  background-color: #13293d;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+aside #nav li a:hover {
+  background-color: #2970ca;
+  color: #13293d;
+}
+
+aside #nav li .list-collections {
+  position: relative;
+  display: none;
+}
+
+aside #nav li .list-collections li {
+  width: 60%;
+  margin: 0 auto;
+}
+
+aside #nav li .list-collections li a {
+  margin: 10px 0px;
+  border-radius: 20px;
+}
+
+aside #nav li:first-child a {
+  border-radius: 20px 20px 0px 0px;
+}
+
+aside #nav li:last-child a {
+  border-radius: 0px 0px 20px 20px;
+}
+
+all-funko, funko-add, saga-funko, funkopop, edit-funko, compraform {
+  width: 75%;
+  margin: 0 auto;
+}
+
+all-funko h2, funko-add h2, saga-funko h2, funkopop h2, edit-funko h2, compraform h2 {
+  text-align: center;
+  color: #2970ca;
+  margin-bottom: 30px;
+}
+
+.allFunko ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cardFunko {
+  margin: 15px;
+  border: 1px solid #006494;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 4px 1px #2970ca;
+          box-shadow: 0px 0px 4px 1px #2970ca;
+}
+
+.cardFunko a {
+  text-decoration: none;
+}
+
+.cardFunko .image {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.cardFunko .image img {
+  width: 200px;
+  max-width: 250px;
+}
+
+.cardFunko .info-funko {
+  width: 200px;
+  height: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.cardFunko .info-funko h3, .cardFunko .info-funko h5 {
+  width: 100%;
+}
+
+.cardFunko .info-funko h3, .cardFunko .info-funko p, .cardFunko .info-funko h4 {
+  color: #2970ca;
+}
+
+.cardFunko .info-funko h5 {
+  color: #006494;
+}
+
+.cardFunko .special {
+  background-color: lightblue;
+  position: absolute;
+  padding: 8px;
+  border-radius: 20px;
+  color: #0c1a27;
+  margin-top: -20px;
+  margin-left: -21px;
+}
+
+.cardFunko .agotado {
+  margin-left: 128px;
+  margin-top: 287px;
+  background-color: salmon;
+  color: black;
+}
+
+.funkopop .cardFunko {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  margin-top: 75px;
+}
+
+.funkopop .cardFunko .special {
+  max-width: 100px;
+  margin: 10px;
+  margin-top: -20px;
+  margin-left: -21px;
+}
+
+.funkopop .cardFunko .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0px;
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+
+.funkopop .cardFunko .image img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.funkopop .cardFunko .info-funko {
+  width: 60%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 50px;
+}
+
+.funkopop .cardFunko .info-funko span {
+  width: 100%;
+}
+
+.funkopop .cardFunko .info-funko span h3, .funkopop .cardFunko .info-funko span h5, .funkopop .cardFunko .info-funko span h4 {
+  width: 100%;
+}
+
+.funkopop .cardFunko .info-funko span h3 {
+  margin: 30px 0px;
+  font-size: 30px;
+}
+
+.funkopop .cardFunko .info-funko span h4 {
+  margin: 30px 0px;
+  font-size: 25px;
+}
+
+.funkopop .cardFunko .info-funko a {
+  min-width: 150px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #13293d;
+  color: #2970ca;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Hachi';
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px;
+}
+
+.funkopop .cardFunko .info-funko a:hover {
+  background-color: #2970ca;
+  color: #13293d;
+}
+
+.funkopop .cardFunko .info-funko .agotado {
+  background-color: salmon;
+  color: black;
+  cursor: default;
+}
+
+.funkopop .cardFunko .info-funko .agotado:hover {
+  background-color: salmon;
+  color: black;
+}
+
+#formFunko {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+#formFunko .image {
+  width: 50%;
+}
+
+#formFunko .image div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+#formFunko .image div label {
+  margin: 0 auto;
+  height: 30px;
+}
+
+#formFunko .image div img {
+  border-radius: 35px;
+  width: 250px;
+}
+
+#formFunko .info {
+  width: 50%;
+}
+
+#formFunko .info div {
+  width: 100%;
+  margin: 15px;
+}
+
+#formFunko .info #button {
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+#formFunko .info #button:hover input[type=submit] {
+  background-color: #2970ca;
+  color: #13293d;
+}
+
+#formFunko .info #button:hover input[disabled]:hover {
+  -webkit-box-shadow: 0px 0px 4px 1px #333;
+          box-shadow: 0px 0px 4px 1px #333;
+  color: #333;
+  background-color: transparent;
+}
+
+#formFunko .info span {
+  color: red;
+}
+
+#formlogOut {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+#formBuy div {
+  width: 100%;
+  margin: 30px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#formBuy div .prices {
+  text-align: center;
+  width: 80%;
+  max-width: 450px;
+  padding: 10px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 4px 1px #2970ca;
+          box-shadow: 0px 0px 4px 1px #2970ca;
+  border: 1px solid #006494;
+  color: #2970ca;
+  font-size: 15px;
+}
+
+#formBuy div span {
+  color: red;
+  margin-left: 20px;
+}
+
+#formBuy div label {
+  min-height: 30px;
+}
+
+#formBuy #button {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+#formBuy #button input {
+  width: 100%;
+  display: block;
+}
+
+#formBuy #button:hover input[type=submit] {
+  background-color: #2970ca;
+  color: #13293d;
+}
+
+#formBuy #button:hover input[disabled]:hover {
+  -webkit-box-shadow: 0px 0px 4px 1px #333;
+          box-shadow: 0px 0px 4px 1px #333;
+  color: #333;
+  background-color: transparent;
+}
+
+#formBuy .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#formBuy .title h3 {
+  padding: 10px;
+  line-height: 30px;
+  min-height: 30px;
+  border-radius: 10px;
+  color: #13293d;
+  background-color: #2970ca;
+}
+
+#formBuy .title h2 {
+  text-align: left;
+  width: 90%;
+  margin: 0px;
+  line-height: 46px;
+}
+
+input {
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 30px;
+  color: #006494;
+  background-color: #0c1a27;
+  border: 2px solid #006494;
+  -webkit-box-shadow: 0px 0px 4px 1px #2970ca;
+          box-shadow: 0px 0px 4px 1px #2970ca;
+}
+
+label, input[type=submit] {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #2970ca;
+  color: #13293d;
+  border-radius: 10px;
+}
+
+input[type=submit] {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  font-family: 'Hachi';
+  color: #2970ca;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+input[disabled] {
+  cursor: not-allowed;
+  -webkit-box-shadow: 0px 0px 4px 1px #333;
+          box-shadow: 0px 0px 4px 1px #333;
+  color: #333;
+}
+
+input[type=checkbox] {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,72 @@
+@media (max-width: 1024px) {
+  all-funko, funko-add, saga-funko, funkopop, edit-funko {
+    width: 100%;
+  }
+  aside {
+    width: 100%;
+    padding-top: 10px;
+  }
+  aside #nav li .list-collections {
+    margin: 0 auto;
+    width: 20%;
+  }
+  aside #nav li .list-collections li {
+    width: auto;
+  }
+  aside login {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+  }
+  #formFunko .info {
+    width: 100%;
+  }
+  #formFunko .info div {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  #formFunko .info #button {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  #formFunko .info #button input {
+    margin: 0;
+  }
+  #formFunko .image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  #formFunko .info div {
+    width: 80%;
+    text-align: center;
+  }
+  #formFunko .info div label {
+    display: inline-block;
+    width: 200px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+  #formFunko .info div input {
+    margin: 0 auto;
+  }
+  #formBuy div {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #formBuy div span, #formBuy div input {
+    margin: 10px 0px;
+  }
+}
+
+@media (max-width: 425px) {
+  aside #nav li .list-collections {
+    width: 60%;
+  }
+  .funkopop .cardFunko .info-funko {
+    margin: 0px;
+  }
+}
+/*# sourceMappingURL=jquery.css.map */
