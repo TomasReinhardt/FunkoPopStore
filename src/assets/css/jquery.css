@@ -1,8 +1,14 @@
 @media (max-width: 1024px) {
   all-funko, funko-add, saga-funko, funkopop, edit-funko {
     width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
   aside {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     width: 100%;
     padding-top: 10px;
   }
@@ -62,8 +68,17 @@
 }
 
 @media (max-width: 425px) {
+  aside {
+    width: 100%;
+  }
   aside #nav li .list-collections {
     width: 60%;
+  }
+  aside #nav li a {
+    max-width: none;
+  }
+  aside login {
+    width: 80%;
   }
   .funkopop .cardFunko .info-funko {
     margin: 0px;

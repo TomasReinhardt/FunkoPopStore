@@ -12,19 +12,23 @@ $color3: #13293d;
 }
 
 body {
-    background-color: $colorfondo;
+    background-color:  black;
     font-family: 'Hachi';
 }
 
 .img {
     overflow: hidden;
     max-height: 250px;
+    text-align: center;
     img {
-        width: 100%;
-        height: 100%;
+        max-width: 250px;
     }
 }
-
+.divisor {
+    display: block;
+    width: 100%;
+    box-shadow: 0px 4px 10px 10px $color3;
+}
 li {
     list-style: none;
 }
@@ -123,7 +127,7 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
     h2 {
         text-align: center;
         color: $color1;
-        margin-bottom: 30px;
+        margin: 20px 0px;
     }
 }
 
@@ -144,12 +148,14 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
     border-radius: 20px;
     overflow: hidden;
     padding: 10px;
-    box-shadow: 0px 0px 4px 1px $color1;
+    box-shadow: 0px 0px 4px 1px $color1, inset 0px 0px 60px 30px $colorfondo;
+    transition: all 800ms;
     .image {
         border-radius: 100%;
         width: 200px;
         height: 200px;
         overflow: hidden;
+        transition: all 300ms;
         img {
             width: 200px;
             max-width: 250px;
@@ -163,6 +169,7 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
         align-items: flex-end;
         h3,h5 {
             width: 100%;
+            transition: all 300ms;
         }
         h3,p,h4 {
             color: $color1;
@@ -179,6 +186,7 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
         color: $colorfondo;
         margin-top: -20px;
         margin-left: -21px;
+        transition: all 1000ms;
     }
     .agotado {
         margin-left: 128px;
@@ -187,7 +195,23 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
         color: black;
     }
 }
-
+.cardFunko:hover {
+    background-color: $color1;
+    .special {
+        transform: translateY(-30px);
+    }
+    .agotado {
+        transform: translateY(0px);
+    }
+    .image {
+        border-radius: 60px;
+    }
+    .info-funko {
+        h3,h5 {
+            color: black;
+        }
+    }
+}
 .funkopop {
     .cardFunko {
         display: flex;
@@ -195,6 +219,7 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
         justify-content: center;
         height: 100%;
         margin-top: 75px;
+        align-items: center;
         .special {
             max-width: 100px;
             margin: 10px;
@@ -260,6 +285,12 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
                 background-color: salmon;
                 color: black;
             }
+        }
+    }
+    .cardFunko:hover {
+        background-color: transparent;
+        h3 {
+            color: $color1;
         }
     }
 }

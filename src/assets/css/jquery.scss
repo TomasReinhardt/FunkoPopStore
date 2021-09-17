@@ -2,8 +2,10 @@
 @media (max-width: 1024px){
     all-funko, funko-add, saga-funko, funkopop, edit-funko {
         width: 100%;
+        order: 2;
     }
     aside {
+        order: 1;
         width: 100%;
         padding-top: 10px;
         #nav {
@@ -74,12 +76,19 @@
 }
 @media (max-width: 425px){
     aside {
+        width: 100%;
         #nav {
             li {
                 .list-collections {
                     width: 60%;
                 }
+                a{
+                    max-width: none;
+                }
             }
+        }
+        login {
+            width: 80%;
         }
     }
     .funkopop {
