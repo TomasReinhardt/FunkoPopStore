@@ -1,3 +1,7 @@
+$colorfondo: #0c1a27;
+$color1: #2970ca;
+$color2: #006494;
+$color3: #13293d;
 
 @media (max-width: 1024px){
     all-funko, funko-add, saga-funko, funkopop, edit-funko {
@@ -73,6 +77,34 @@
             }
         }
     }
+    .funkopop {
+        .cardFunko {
+            .info-funko {
+                margin: 0px;
+            }
+            span {
+                div {
+                    input[type=number] {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .trolley {
+        ul {
+            .itemC{
+                flex-wrap: wrap;
+                border-bottom: 1px solid $color1;
+                .nameF {
+                    width: 100%;
+                }
+            }
+            li:last-child {
+                border-bottom: none;
+            }
+        }
+    }
 }
 @media (max-width: 425px){
     aside {
@@ -94,7 +126,9 @@
     .funkopop {
         .cardFunko {
             .info-funko {
-                margin: 0px;
+                a {
+                    height: auto;
+                }
             }
         }
     }

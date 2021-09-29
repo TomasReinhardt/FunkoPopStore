@@ -65,7 +65,7 @@ aside {
             color: $color3;
         }
     }
-    #nav {
+    .nav {
         display: flex;
         flex-flow: column;
         width: 100%;
@@ -73,6 +73,7 @@ aside {
         justify-content: center;
         border-radius: 20px;
         overflow: hidden;
+        margin-bottom: 20px;
         li {
             width: 100%;
             a {
@@ -115,6 +116,11 @@ aside {
         li:last-child{
             a{
                 border-radius: 0px 0px 20px 20px;
+            }
+        }
+        #car {
+            a{
+                border-radius: 20px 20px 20px 20px;
             }
         }
     }
@@ -256,11 +262,15 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
                     margin: 30px 0px;
                     font-size: 25px;
                 }
+                div {
+                    margin-bottom: 20px;
+                }
             }
             a {
                 min-width: 150px;
                 height: 50px;
                 margin: 0 auto;
+                padding: 0px 10px;
                 background-color: $color3;
                 color: $color1;
                 border: none;
@@ -356,17 +366,6 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
         margin: 30px 0px;
         display: flex;
         align-items: center;
-        .prices {
-            text-align: center;
-            width: 80%;
-            max-width: 450px;
-            padding: 10px;
-            border-radius: 20px;
-            box-shadow: 0px 0px 4px 1px $color1;
-            border: 1px solid $color2;
-            color: $color1;
-            font-size: 15px;
-        }
         span {
             color: red;
             margin-left: 20px;
@@ -375,6 +374,18 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
             min-height: 30px;
         }
     }
+    .prices {
+        text-align: center;
+        width: 80%;
+        max-width: 450px;
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 4px 1px $color1;
+        border: 1px solid $color2;
+        color: $color1;
+        font-size: 15px;
+    }
+
     #button{
         width: 100%;
         margin: 0 auto;
@@ -411,6 +422,59 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
             width: 90%;
             margin: 0px;
             line-height: 46px;
+        }
+    }
+}
+.trolley{
+    max-width: none;
+    text-align: left;
+    box-shadow: 0px 0px 4px 1px $color1;
+    border: 1px solid $color2;
+    border-radius: 20px;
+    padding: 10px;
+
+    ul {
+        width: 100%;
+        li {
+            color: $color1;
+            text-align: center;
+        }
+        .itemC {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            span {
+                width: 60%;
+                color: $color1;
+                margin: 5px 0px;
+                button {
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: $color1;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 20px;
+                    border: 1px solid $color2;
+                    margin: 0px 5px;
+                    transition: all 300ms;
+                }
+                button:hover, a:hover {
+                    background-color: $color1;
+                    color: $color3;
+                }
+                .removeItem {
+                    color: salmon;
+                    border: 1px solid salmon;
+                }
+                .removeItem:hover {
+                    background-color: salmon;
+                    color: black;
+                }
+            }
+            .cantF, .priceF{
+                width: 30%;
+                text-align: center;
+            }
         }
     }
 }

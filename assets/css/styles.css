@@ -85,7 +85,7 @@ aside form input[type=submit]:hover {
   color: #13293d;
 }
 
-aside #nav {
+aside .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,13 +102,14 @@ aside #nav {
           justify-content: center;
   border-radius: 20px;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
-aside #nav li {
+aside .nav li {
   width: 100%;
 }
 
-aside #nav li a {
+aside .nav li a {
   display: block;
   text-decoration: none;
   max-width: 250px;
@@ -123,32 +124,36 @@ aside #nav li a {
   cursor: pointer;
 }
 
-aside #nav li a:hover {
+aside .nav li a:hover {
   background-color: #2970ca;
   color: #13293d;
 }
 
-aside #nav li .list-collections {
+aside .nav li .list-collections {
   position: relative;
   display: none;
 }
 
-aside #nav li .list-collections li {
+aside .nav li .list-collections li {
   width: 60%;
   margin: 0 auto;
 }
 
-aside #nav li .list-collections li a {
+aside .nav li .list-collections li a {
   margin: 10px 0px;
   border-radius: 20px;
 }
 
-aside #nav li:first-child a {
+aside .nav li:first-child a {
   border-radius: 20px 20px 0px 0px;
 }
 
-aside #nav li:last-child a {
+aside .nav li:last-child a {
   border-radius: 0px 0px 20px 20px;
+}
+
+aside .nav #car a {
+  border-radius: 20px 20px 20px 20px;
 }
 
 all-funko, funko-add, saga-funko, funkopop, edit-funko, compraform {
@@ -337,10 +342,15 @@ all-funko h2, funko-add h2, saga-funko h2, funkopop h2, edit-funko h2, comprafor
   font-size: 25px;
 }
 
+.funkopop .cardFunko .info-funko span div {
+  margin-bottom: 20px;
+}
+
 .funkopop .cardFunko .info-funko a {
   min-width: 150px;
   height: 50px;
   margin: 0 auto;
+  padding: 0px 10px;
   background-color: #13293d;
   color: #2970ca;
   border: none;
@@ -460,7 +470,16 @@ all-funko h2, funko-add h2, saga-funko h2, funkopop h2, edit-funko h2, comprafor
           align-items: center;
 }
 
-#formBuy div .prices {
+#formBuy div span {
+  color: red;
+  margin-left: 20px;
+}
+
+#formBuy div label {
+  min-height: 30px;
+}
+
+#formBuy .prices {
   text-align: center;
   width: 80%;
   max-width: 450px;
@@ -471,15 +490,6 @@ all-funko h2, funko-add h2, saga-funko h2, funkopop h2, edit-funko h2, comprafor
   border: 1px solid #006494;
   color: #2970ca;
   font-size: 15px;
-}
-
-#formBuy div span {
-  color: red;
-  margin-left: 20px;
-}
-
-#formBuy div label {
-  min-height: 30px;
 }
 
 #formBuy #button {
@@ -527,6 +537,74 @@ all-funko h2, funko-add h2, saga-funko h2, funkopop h2, edit-funko h2, comprafor
   width: 90%;
   margin: 0px;
   line-height: 46px;
+}
+
+.trolley {
+  max-width: none;
+  text-align: left;
+  -webkit-box-shadow: 0px 0px 4px 1px #2970ca;
+          box-shadow: 0px 0px 4px 1px #2970ca;
+  border: 1px solid #006494;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.trolley ul {
+  width: 100%;
+}
+
+.trolley ul li {
+  color: #2970ca;
+  text-align: center;
+}
+
+.trolley ul .itemC {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.trolley ul .itemC span {
+  width: 60%;
+  color: #2970ca;
+  margin: 5px 0px;
+}
+
+.trolley ul .itemC span button {
+  cursor: pointer;
+  background-color: transparent;
+  color: #2970ca;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: 1px solid #006494;
+  margin: 0px 5px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.trolley ul .itemC span button:hover, .trolley ul .itemC span a:hover {
+  background-color: #2970ca;
+  color: #13293d;
+}
+
+.trolley ul .itemC span .removeItem {
+  color: salmon;
+  border: 1px solid salmon;
+}
+
+.trolley ul .itemC span .removeItem:hover {
+  background-color: salmon;
+  color: black;
+}
+
+.trolley ul .itemC .cantF, .trolley ul .itemC .priceF {
+  width: 30%;
+  text-align: center;
 }
 
 input {
