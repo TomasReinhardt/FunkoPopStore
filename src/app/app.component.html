@@ -1,7 +1,10 @@
 <div class="conteiner">
     <router-outlet></router-outlet>
     <aside>
-        <ul id="nav">
+        <ul class="nav">
+            <li id="car"><a [routerLink]="['/trolley']">Carrito ({{trolley.length}})</a></li>
+        </ul>
+        <ul class="nav">
             <li><a [routerLink]="['/']">Todos</a></li>
             <li><a id="addF" [routerLink]="['/addfunko']" *ngIf="userA.admin == 'true'">Añadir FunkoPop</a></li>
             <li id="collections"> <a id="button-menu" (click)="click()">Colecciones</a>

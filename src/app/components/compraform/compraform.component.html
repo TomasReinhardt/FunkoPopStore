@@ -1,28 +1,39 @@
 <h2>Compra</h2>
+<div class="title">
+    <h3>Su lindo carrito:</h3>
+</div>
+
+<div class="trolley">
+    <ul *ngIf="trolley.length > 0">
+        <li class="itemC" *ngFor="let item of trolley; let indice=index" >
+            <span class="nameF">{{item.funko.name}}</span>
+            <span class="priceF">{{item.cant}} x ${{item.funko.price}}</span>
+            <span class="cantF">  
+                <button (click)="addCant(indice)">+</button> 
+                <button (click)="removeCant(indice)">-</button>
+                <button class="removeItem" (click)="removeItem(indice)">X</button>
+            </span>
+        </li>
+    </ul>
+    <ul *ngIf="trolley.length == 0">
+        <li>Su carrito esta vacio :c</li>
+    </ul>
+</div>
+
 <form id="formBuy" #formBuy="ngForm" (ngSubmit)="buy(formBuy)">
-    <div class="title">
-        <h3>Usted esta por comprar el siguiente FunkoPop:</h3>
-        <h2>{{funko.name}} - {{funko.edition}} por: ${{funko.price}}</h2>
-    </div>
-
     <div>
-        <label for="cant">Cantidad:</label>
-        <input type="number" name="cant" #cant="ngModel" [(ngModel)]="cantidad">
+        <label>Costo de envio: </label><span class="prices">${{costoenvio}} - ARS</span>
     </div>
-
+    
+    <div>
+        <label>Precio Final: </label><span class="prices">${{pricefinal}} - ARS</span>
+    </div>
+    
     <div>
         <label for="email">Correo de facturacion:</label>
         <input type="email" name="email" #email="ngModel" [(ngModel)]="correo" required>
         <span *ngIf="email.touched && !email.valid">Campo Obligatorio</span>
 
-    </div>
-
-    <div>
-        <label>Costo de envio: </label><span class="prices">${{costoenvio}} - pesos argentinos</span>
-    </div>
-
-    <div>
-        <label>Precio Final: </label><span class="prices">${{pricefinal}} - pesos argentinos</span>
     </div>
 
     <div id="button">

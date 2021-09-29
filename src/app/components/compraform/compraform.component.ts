@@ -3,6 +3,7 @@ import { FunkopopService } from 'src/app/services/funkopop.service';
 import { Global } from 'src/app/services/global';
 import { funkopop } from 'src/app/models/funkopop';
 import { Router,ActivatedRoute,Params } from '@angular/router';
+import { Item } from 'src/app/models/item';
 
 @Component({
   selector: 'compraform',
@@ -17,6 +18,10 @@ export class CompraformComponent implements OnInit {
   public url:string = Global.url;
   public pricefinal: number = 0;
   public costoenvio:number = 500;
+  public aux: any;
+  public trolley: Array<Item> = [];
+  public item: Item = {funko:this.funko,cant:0}
+
   constructor(
     private _FunkoPopService: FunkopopService,
     public _router: Router,
@@ -24,37 +29,38 @@ export class CompraformComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._route.params.subscribe(params => {
-      let id = params.id;
-      this.getfunko(id);
-    });
+    this.aux = sessionStorage.getItem('trolley');
+    this.trolley = JSON.parse(this.aux);
+
+    for (let i = 0; i < this.trolley.length; i++) {
+      this.getfunko(this.trolley[i]);
+    }
+    this.finalPrice();
   }
 
-  ngDoCheck() {
-    this.pricefinal = this.funko.price*this.cantidad+this.costoenvio;
-  }
   buy(form:any){
-    alert('Felicidades por su compra invisible, pronto le llegara una factura invisible a su correo :D')
-    this.funko.stock -= 1;
-    this.saveFunko();
-    this._router.navigate(['/']);
-  }
-
-  getfunko(id:string){
-    this._FunkoPopService.getFunkoPop(id).subscribe(
-      response => {
-        if(response.funkopop){
-          this.funko = response.funkopop;
-        };
-      },
-      err => {
-        console.log(err);
+    if(this.trolley.length > 0){
+      alert('Felicidades por su compra invisible, pronto le llegara una factura invisible a su correo :D')
+      console.log(form)
+      for (let i = 0; i < this.trolley.length; i++) {
+        this.trolley[i].funko.stock -= this.trolley[i].cant;
+        this.saveFunko(this.trolley[i].funko);
       }
-    )
+      this.trolley = [];
+      sessionStorage.setItem('trolley',  JSON.stringify(this.trolley));
+    }else {
+      alert('Su carrito sigue vacio :c')
+    }
+    
   }
 
-  saveFunko() {
-    this._FunkoPopService.updateFunko(this.funko).subscribe(
+  getfunko(item:Item) {
+    this.item.funko= item.funko;
+    this.item.cant = item.cant
+  }
+
+  saveFunko(funko: funkopop) {
+    this._FunkoPopService.updateFunko(funko).subscribe(
       response =>{
         
       },
@@ -62,5 +68,35 @@ export class CompraformComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  finalPrice(){
+    this.pricefinal = 0;
+    for (let i = 0; i < this.trolley.length; i++) {
+      this.pricefinal += this.trolley[i].funko.price*this.trolley[i].cant;
+    }
+    this.pricefinal += this.costoenvio;
+  }
+
+  addCant(index:number){
+    this.trolley[index].cant++;
+    this.finalPrice();
+    sessionStorage.setItem('trolley',  JSON.stringify(this.trolley));
+  }
+
+  removeCant(index:number){
+    this.trolley[index].cant--;
+    this.finalPrice();
+    sessionStorage.setItem('trolley',  JSON.stringify(this.trolley));
+    if ( this.trolley[index].cant==0){
+      this.removeItem(index);
+    }
+
+  }
+
+  removeItem(index:number){
+    this.trolley.splice(index,1);
+    this.finalPrice();
+    sessionStorage.setItem('trolley',  JSON.stringify(this.trolley));
   }
 }

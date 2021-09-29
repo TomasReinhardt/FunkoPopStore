@@ -65,6 +65,23 @@
   #formBuy div span, #formBuy div input {
     margin: 10px 0px;
   }
+  .funkopop .cardFunko .info-funko {
+    margin: 0px;
+  }
+  .funkopop .cardFunko span div input[type=number] {
+    margin-top: 20px;
+  }
+  .trolley ul .itemC {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    border-bottom: 1px solid #2970ca;
+  }
+  .trolley ul .itemC .nameF {
+    width: 100%;
+  }
+  .trolley ul li:last-child {
+    border-bottom: none;
+  }
 }
 
 @media (max-width: 425px) {
@@ -80,8 +97,8 @@
   aside login {
     width: 80%;
   }
-  .funkopop .cardFunko .info-funko {
-    margin: 0px;
+  .funkopop .cardFunko .info-funko a {
+    height: auto;
   }
 }
 /*# sourceMappingURL=jquery.css.map */

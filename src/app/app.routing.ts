@@ -13,7 +13,7 @@ const appRoutes: Routes = [
     {   path: 'collections/:saga', component: SagaFunkoComponent},
     {   path: 'funkopop/:id', component: FunkopopComponent},
     {   path: 'funkopop/:id/edit', component: EditFunkoComponent},
-    {   path: 'funkopop/:id/buy', component: CompraformComponent},
+    {   path: 'trolley', component: CompraformComponent},
     {   path: 'addfunko', component: FunkoAddComponent},
     {   path: '**', component: AllFunkoComponent}
 ];

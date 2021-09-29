@@ -13,9 +13,13 @@
                     Stock: {{funko.stock}}
                 </p>
                 <h4> Precio: ${{funko.price}} </h4>
+                <div>
+                    <label for="cant">Cantidad:</label>
+                    <input type="number" name="cant" #cant="ngModel" [(ngModel)]="cantidad">
+                </div>
             </span>
 
-            <a [routerLink]="['/funkopop',funko._id,'buy']"  *ngIf="funko.stock > 0">Comprar</a>
+            <a (click)='addItemTrolley()'  *ngIf="funko.stock > 0">Añadir al carrito</a>
             <a class="agotado" *ngIf="funko.stock <= 0">Agotado</a>
             <a [routerLink]="['/funkopop',funko._id,'edit']" *ngIf="userA.admin == 'true'">Editar</a>
         </div>
