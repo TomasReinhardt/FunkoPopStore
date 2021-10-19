@@ -178,6 +178,15 @@ all-funko h2, funko-add h2, saga-funko h2, funkopop h2, edit-funko h2, comprafor
           justify-content: center;
 }
 
+.allFunko .search {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.allFunko .search input {
+  font-family: 'Hachi';
+}
+
 .cardFunko {
   margin: 15px;
   border: 1px solid #006494;
