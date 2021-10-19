@@ -6,17 +6,26 @@ import { FunkopopService } from 'src/app/services/funkopop.service';
   selector: 'all-funko',
   templateUrl: './all-funko.component.html',
   styleUrls: ['./all-funko.component.css'],
-  providers: [FunkopopService]
+  providers: [FunkopopService],
+
+  
 })
 export class AllFunkoComponent implements OnInit {
   public funkopops: funkopop[] = [];
   public title:string = "FunkoPops"
+  public nameSearch: string = "";
+  public nameSearchM: string = "";
+  
   constructor(
     private _FunkoPopService: FunkopopService
   ) { }
 
   ngOnInit(){
     this.getFunkoPops();
+  }
+  
+  ngDoCheck() {
+    this.nameSearch = this.nameSearchM.toLowerCase();
   }
 
   getFunkoPops() {
@@ -31,6 +40,4 @@ export class AllFunkoComponent implements OnInit {
       }
     )
   }
-
-
 }

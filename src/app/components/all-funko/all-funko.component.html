@@ -1,6 +1,7 @@
 <div class="allFunko">
     <h2>{{title}}</h2>
+    <div class="search"><input type="text" placeholder="Search by name..." [(ngModel)]="nameSearchM"/></div>
     <ul>
-        <li class="funko-item" *ngFor="let funko of funkopops"> <card-funko [funko]="funko"></card-funko> </li>
+        <li class="funko-item" *ngFor="let funko of funkopops"> <card-funko [funko]="funko" *ngIf="funko.name.toLowerCase().includes(nameSearch)"></card-funko> </li>
     </ul>
 </div>

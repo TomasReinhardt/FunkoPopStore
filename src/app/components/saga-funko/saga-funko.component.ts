@@ -12,6 +12,8 @@ import { FunkopopService } from 'src/app/services/funkopop.service';
 export class SagaFunkoComponent implements OnInit {
   public funkopops: funkopop[] = [];
   public title:any = "";
+  public nameSearch: string = "";
+  public nameSearchM: string = "";
 
   constructor(
     private _funkopopService: FunkopopService,
@@ -24,6 +26,10 @@ export class SagaFunkoComponent implements OnInit {
       this.title = params.get('saga');
       this.getSagaFunkoPop();
     });
+  }
+  
+  ngDoCheck() {
+    this.nameSearch = this.nameSearchM.toLowerCase();
   }
 
   getSagaFunkoPop() {

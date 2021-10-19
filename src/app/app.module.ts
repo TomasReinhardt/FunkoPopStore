@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { Routing, ModuleRoutingProviders } from './app.routing';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { FunkopopComponent } from './components/funkopop/funkopop.component';
@@ -30,7 +31,8 @@ import { CompraformComponent } from './components/compraform/compraform.componen
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    Routing
+    Routing,
+    BrowserAnimationsModule
   ],
   providers: [ ModuleRoutingProviders],
   bootstrap: [AppComponent]

@@ -44,6 +44,7 @@ input[type=number] {
     align-items: flex-start;
     justify-content: space-evenly;
 }
+
 aside {
     width: 20%;
     padding-top: 73px;
@@ -142,6 +143,13 @@ all-funko,funko-add,saga-funko,funkopop,edit-funko,compraform {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .search {
+        margin-bottom: 20px;
+        text-align: center;
+        input {
+            font-family: 'Hachi';
+        }
     }
 }
 
