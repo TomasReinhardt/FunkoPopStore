@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routing, ModuleRoutingProviders } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,9 @@ import { FunkoAddComponent } from './components/funko-add/funko-add.component';
 import { EditFunkoComponent } from './components/edit-funko/edit-funko.component';
 import { LoginComponent } from './components/login/login.component';
 import { CompraformComponent } from './components/compraform/compraform.component';
+
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,12 @@ import { CompraformComponent } from './components/compraform/compraform.componen
     Routing,
     BrowserAnimationsModule
   ],
-  providers: [ ModuleRoutingProviders],
+  providers: [ ModuleRoutingProviders, AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

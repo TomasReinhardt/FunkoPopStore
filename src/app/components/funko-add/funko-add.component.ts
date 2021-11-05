@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { funkopop } from 'src/app/models/funkopop';
+import { authService } from 'src/app/services/auth.services';
 import { FunkopopService } from 'src/app/services/funkopop.service';
 import { Global } from 'src/app/services/global';
 import { UploadService } from 'src/app/services/upload.service';
@@ -18,10 +20,18 @@ export class FunkoAddComponent implements OnInit {
 
   constructor(
     private _FunkoPopService: FunkopopService,
-    private _UploadService: UploadService
+    private _UploadService: UploadService,
+    private _AuthService: authService,
+    private _router: Router
   ) { }
 
   ngOnInit(): void {
+  }
+
+  ngDoCheck(){
+    if(!this._AuthService.loggedIn()){
+      this._router.navigate(['products','all'])
+    }
   }
 
   saveFunko(form: any) {

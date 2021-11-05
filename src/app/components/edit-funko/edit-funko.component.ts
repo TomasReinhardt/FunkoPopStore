@@ -4,12 +4,13 @@ import { FunkopopService } from 'src/app/services/funkopop.service';
 import { Global } from 'src/app/services/global';
 import { UploadService } from 'src/app/services/upload.service';
 import { Router,ActivatedRoute,Params } from '@angular/router';
+import { authService } from 'src/app/services/auth.services';
 
 @Component({
   selector: 'edit-funko',
   templateUrl: '../funko-add/funko-add.component.html',
   styleUrls: ['./edit-funko.component.css'],
-  providers: [ FunkopopService,UploadService]
+  providers: [ FunkopopService,UploadService, authService]
 })
 export class EditFunkoComponent implements OnInit {
   public funko: funkopop = new funkopop('','','',0,0,0,false,'','');
@@ -20,8 +21,9 @@ export class EditFunkoComponent implements OnInit {
   constructor(
     private _FunkoPopService: FunkopopService,
     private _UploadService: UploadService,
-    public _router: Router,
-    public _route: ActivatedRoute
+    private _router: Router,
+    private _route: ActivatedRoute,
+    private _AuthService: authService
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +31,12 @@ export class EditFunkoComponent implements OnInit {
       let id = params.id;
       this.getfunko(id);
     });
+  }
+
+  ngDoCheck(){
+    if(!this._AuthService.loggedIn()){
+      this._router.navigate(['products','all'])
+    }
   }
 
   getfunko(id:string){
